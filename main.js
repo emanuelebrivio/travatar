@@ -13,7 +13,6 @@
     });
   };
 
-
   var canvas = document.getElementById('canvas');
   var canvasM = canvas.offsetWidth || canvas.offsetHeight;		// -- avatar is a square --
   var perRow = 6;
@@ -22,7 +21,6 @@
   Math.seedrandom('whale');
 
   if (canvas.getContext) {
-  	console.log('canvas is ok');
 
   	var ctx = canvas.getContext('2d');
 
@@ -69,6 +67,9 @@
 
       }
   	}
+    
+    var img = canvas.toDataURL("image/png");
+    console.log(img);
 
   }
   
