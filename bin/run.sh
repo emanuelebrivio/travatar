@@ -1,0 +1,1 @@
+nodemon -e jade,js --exec jade index.jade & static -p 4000 -a 0.0.0.0
