@@ -1,0 +1,6 @@
+.env
+node_modules/
+style.css
+index.html
+*.log
+.DS_Store

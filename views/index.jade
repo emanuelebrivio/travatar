@@ -1,0 +1,87 @@
+doctype html
+html
+  head
+    title travatar
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css', rel='stylesheet')
+    link(href='//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css', rel='stylesheet')
+    link(href='/static/css/style.css', rel='stylesheet')
+
+  body
+
+    pre(style='font-size:11px;')=JSON.stringify({url: '/api/avatar/get', data: { email: 'heisenberg@plasticpanda.com' }}, null, 2)
+
+
+    form#getImgForm
+      input#email(name='email', type='email', value='heisenberg@plasticpanda.com', required)
+      button(type='submit')
+        span get img ;)
+
+    #imgs
+
+
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/reqwest/1.1.5/reqwest.js')
+    script.
+      (function () {
+        'use strict';
+
+        NodeList.prototype.forEach = Array.prototype.forEach;
+        HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+        NodeList.prototype.on = function (event, listener) {
+          this.forEach(function (el) {
+            el.addEventListener(event, listener);
+          });
+        };
+
+
+        var _getImgForm = document.getElementById('getImgForm');
+        var _emailInserted = document.getElementById('email');
+        var _img = document.getElementById('imgs');
+
+
+        var getImg = function (email) {
+
+          reqwest({
+            url: '/api/avatar/get',
+            data: { email: email },
+            method: 'get',
+            type: 'json',
+            success: function (resp) {
+              console.log(resp);
+              if (resp.params && resp.img) {
+                var _picDiv = document.createElement('div');
+
+                _picDiv.innerHTML = '<pre style="font-size:10px;word-break:break-all;white-space:normal;">' + JSON.stringify(resp, null, 2) + '</pre>' + '<img src="' + resp.img + '" />';
+
+                _img.appendChild(_picDiv);
+              }
+            },
+            error: function (err) {
+              console.log(err);
+            }
+          })
+
+        }
+
+
+
+        _getImgForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          if (_emailInserted.value.trim() === '') {
+            alert('plz insert a valid mail addrezz!');
+            return;
+          }
+
+
+          getImg(_emailInserted.value.trim());
+
+
+          return false;
+        })
+
+
+
+
+      })();
