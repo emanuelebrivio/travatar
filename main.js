@@ -19,7 +19,7 @@
   var perRow = 6;
   var fillPerc = 0.4;
   
-  Math.seedrandom('@plasticpanda.com');
+  Math.seedrandom('whale');
 
   if (canvas.getContext) {
   	console.log('canvas is ok');
@@ -27,8 +27,6 @@
   	var ctx = canvas.getContext('2d');
 
   	var colors = ['#7D1523', '#BD1F34', '#35233D'];
-  	colors = ['#00CEA2', '#FF4A40', '#CC144E'];
-  	colors = ['#AEF587', '#FFD67F', '#5BCF95'];
     var colorsLength = colors.length - 1;
     
   	var mulW = canvasM / perRow;
