@@ -1,2 +1,2 @@
-# travatar
-Triangle Random Avatar generator
+# Whale
+Random avatar generator
