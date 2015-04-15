@@ -49,10 +49,10 @@ html
             type: 'json',
             success: function (resp) {
               console.log(resp);
-              if (resp.params && resp.img) {
+              if (resp.palette && resp.avatar) {
                 var _picDiv = document.createElement('div');
 
-                _picDiv.innerHTML = '<pre style="font-size:10px;word-break:break-all;white-space:normal;">' + JSON.stringify(resp, null, 2) + '</pre>' + '<img src="' + resp.img + '" />';
+                _picDiv.innerHTML = '<pre style="font-size:10px;word-break:break-all;white-space:normal;">' + JSON.stringify(resp.palette.colors, null, 2) + '</pre>' + '<img src="' + resp.avatar + '" />';
 
                 _img.appendChild(_picDiv);
               }

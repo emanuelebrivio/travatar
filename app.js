@@ -38,6 +38,12 @@ route.all('/static/*', function (req, res) {
   });
 });
 
+route.all('/avatars/*', function (req, res) {
+  _publicFiles.serve(req, res, function (err) {
+    if (err) { console.log(err); return; }
+  })
+});
+
 
 //  -- set various routes (index in this case) --
 route.get('/', function (req, res) {
