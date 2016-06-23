@@ -1,4 +1,4 @@
-form
-  input(type='email' placeholder='your.email@address.com' value='a@fsociety.me')
-  button(type='button')
+form(method='POST' action='/avatar/create')
+  input(type='email' name='email' placeholder='your.email@address.com' value='a@fsociety.me')
+  button(type='submit')
     span Got your avatar

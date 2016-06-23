@@ -45,6 +45,7 @@ app
 
 
 app.route('/').get(routes.index);
+app.route('/avatar/create').post(routes.create);
 
 const PORT = app.get('port');
 
