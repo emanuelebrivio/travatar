@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon index.es6 --exec ./node_modules/.bin/babel-node -e pug,styl,js",
-    "build": "./node_modules/.bin/babel index.es6 -o index.js"
+    "dev": "./node_modules/.bin/nodemon index.js --exec ./node_modules/.bin/babel-node -e pug,styl,js"
   },
   "repository": {
     "type": "git",
