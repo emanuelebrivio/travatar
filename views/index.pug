@@ -1,4 +1,52 @@
-form(method='POST' action='/avatar/create')
-  input(type='email' name='email' placeholder='your.email@address.com' value='a@fsociety.me')
-  button(type='submit')
-    span Got your avatar
+doctype html
+html
+  head
+    title Whale
+    
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    
+    // Basic SEO improvements
+    meta(name='keywords', content='')
+    meta(name='author', content='')
+    meta(name='description', content='')
+    
+    // Open Graph protocol - Discover more at http://ogp.me/
+    meta(property='og:title', content='')
+    meta(property='og:url', content='')
+    meta(property='og:description', content='')
+    meta(property='og:image', content='')
+
+    // CDN stuff
+    link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css')
+    link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css')
+    link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700')
+    
+    // nu-based CSS files
+    link(rel='stylesheet' href='/css/clean.css')
+    link(rel='stylesheet' href='/css/style.css')
+    
+    // Cross-platform favicon resources - Discover more at https://realfavicongenerator.net/blog/favicon-why-youre-doing-it-wrong/
+    meta(name='msapplication-TileColor' content='#584843')
+    meta(name='msapplication-TileImage' content='/img/mstile-icon.png')
+    link(rel='apple-touch-icon' href='/img/apple-touch-icon.png')
+    link(rel='shortcut icon' href='/img/favicon.ico')
+    link(rel='icon' href='/img/favicon.png' type='image/png')
+
+
+  body
+
+    form(method='POST' action='/avatar/create')
+      input(type='email' name='email' placeholder='your.email@address.com' value='a@fsociety.me')
+      button(type='submit')
+        span Got your avatar
+
+
+    script(src='/js/main.js')
+
+
+
+
+
+
+
