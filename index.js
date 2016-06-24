@@ -25,7 +25,7 @@ app
 app
   .use(
     stylus.middleware({
-      src: path.join(__dirname, 'public'),
+      src: path.join(__dirname, 'static'),
       compile: (str, stylPath) => (
         stylus(str)
           .set('filename', stylPath)
@@ -40,7 +40,7 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(methodOverride())
-  .use(express.static(path.join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname, 'static')))
   .use(errorHandler());
 
 
